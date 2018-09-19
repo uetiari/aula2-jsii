@@ -16,9 +16,8 @@ button.addEventListener("click", function (evento){
 
     const optionSelect = inputArea.options [inputArea.selectedIndex]
     let radioItem;
-    for(let = i; i < inputLevel.length; i++) {
-      console.log(inputLevel[i])
-      radioItem = inputLevel [i]
+    for(let i = 0; i < inputLevel.length; i++) {
+        radioItem = inputLevel[i]
     }
     
   if (inputNome.value === "" || inputNome.value === " " || inputNome.value === undefined || inputNome.value === null) {
@@ -59,6 +58,36 @@ button.addEventListener("click", function (evento){
   else if (inputSenha.value.length < 7 ){
     alert("Tem que ter 7 ou mais dígitos");
     return false
-  } 
- 
+  }  
+
+  if (radioItem.value === "Junior"){
+      console.log ("0 - 2 anos de experiencia;")
+    } else if (radioItem.value === "Pleno"){
+      console.log ("2 - 5 anos de experiencia;")
+    } else if (radioItem.value === "Senior"){
+      console.log ("5+ anos de experiencia;")
+    }
+
+  document.querySelector("body").style.backgroundColor = "#fff";
+  const form = this.closest("form");
+  form.submit();
+})
+
+// trocar a cor de fundo quando escolher o nível de conhecimento
+inputArea.addEventListener("change", function(){
+  if(inputArea.selectedindex === 0) {
+    document.querySelector("body").style.backgroundColor = "blue";
+  } else if (inputArea.selectedIndex === 1) {
+    document.querySelector("body").style.backgroundColor = "green";
+  } else if (inputArea.selectedIndex === 2) {
+    document.querySelector("body").style.backgroundColor = "pink";
+  } else if (inputArea.selectedIndex === 3) {
+    document.querySelector("body").style.backgroundColor = "orange";
+  }
+})
+
+// para evitar o colar na confirmação do email
+inputEmailConfirm.addEventListener("paste", function(event){
+  event.PreventDefault();
+  return false;
 })
