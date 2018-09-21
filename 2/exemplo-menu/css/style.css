@@ -19,6 +19,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 0;
+    transition: 1s;
+}
+
+.sidebar-menu__visible{
+    left: 0;
+}
+
+.sidebar-menu__hidden{
+    left: -440px;
 }
 
 .sidebar-menu__button{

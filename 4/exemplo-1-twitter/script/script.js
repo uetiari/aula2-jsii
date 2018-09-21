@@ -96,7 +96,5 @@ tweet.addEventListener("keyup", function(){
     //senão ele continua habilitado  para postar 
     button.disabled = false;
   }
-  
-
 
 })
